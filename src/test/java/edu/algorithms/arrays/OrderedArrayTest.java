@@ -85,4 +85,12 @@ public class OrderedArrayTest {
         assertArrayEquals(new int[]{2, 3, 5, 7, 9, 10, 13, 14, 16, 18, 27, 99}, orderedArray.merge(toMergeArr));
         assertArrayEquals(new int[]{0, 0, 2, 3, 5, 7, 9, 13, 14, 18}, orderedArray.merge(new int[2]));
     }
+
+    @Test
+    public void findBinaryRecursive() {
+        int[] testArr = getTestArray();
+        OrderedArray orderedArray = new OrderedArray(testArr);
+        assertEquals(2, orderedArray.findBinaryRecursive(5));
+        assertEquals(-1, orderedArray.findBinaryRecursive(22));
+    }
 }

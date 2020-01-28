@@ -49,6 +49,23 @@ public class OrderedArray {
         }
     }
 
+    public int findBinaryRecursive(final int value) {
+        return findBinaryRecursive(value, 0, array.length - 1);
+    }
+
+    private int findBinaryRecursive(final int value, int lowBound, int highBound) {
+        int midIndex = (lowBound + highBound) / 2;
+        if (array[midIndex] == value) {
+            return midIndex;
+        } else if (lowBound > highBound) {
+            return -1;
+        } else if (array[midIndex] < value) {
+            return findBinaryRecursive(value, midIndex + 1, highBound);
+        } else {
+            return findBinaryRecursive(value, lowBound, midIndex - 1);
+        }
+    }
+
     public int[] insertLinear(final int value) {
         final int[] result = new int[array.length + 1];
         System.arraycopy(array, 0, result, 0, array.length);
