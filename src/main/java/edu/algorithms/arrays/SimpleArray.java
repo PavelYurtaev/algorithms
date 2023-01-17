@@ -11,6 +11,21 @@ public class SimpleArray {
         array = input;
     }
 
+    public int[] bubbleSortRemember() {
+        for (int i = 0; i < array.length; i++) {
+            printArray();
+            for (int j = array.length - 1; j > i; j--) {
+                if (array[j] < array[j - 1]) {
+                    int temp = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = temp;
+
+                }
+            }
+        }
+        printArray();
+        return array;
+    }
     public long getMax() {
         if (array.length == 0) return -1;
         long max = array[0];
